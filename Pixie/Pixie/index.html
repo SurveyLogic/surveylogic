@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+  <title>Pixie Example</title>
+  <style>
+      html, body, #editor-container {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+  </style>
+</head>
+<body>
+<div id="editor-container"></div>
+<script src="dist/pixie.umd.js"></script>
+<script>
+  const pixie = new Pixie({
+    selector: "#editor-container",
+    baseUrl: 'assets',
+    image: "assets/images/samples/car_sample.jpg",
+    ui: {
+      menubar: {
+        items: [
+          {
+            type: 'button',
+            icon: [
+              {
+                tag: 'path',
+                attr: {
+                  d: 'm11.99 18.54-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z',
+                },
+              },
+            ],
+            align: 'right',
+            position: 0,
+            action: editor => {
+              editor.togglePanel('objects');
+            },
+          },
+          {
+            type: 'button',
+            icon: [
+              {
+                tag: 'path',
+                attr: {
+                  d: 'M18 20H4V6h9V4H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9h-2v9zm-7.79-3.17-1.96-2.36L5.5 18h11l-3.54-4.71zM20 4V1h-2v3h-3c.01.01 0 2 0 2h3v2.99c.01.01 2 0 2 0V6h3V4h-3z',
+                },
+              },
+            ],
+            align: 'left',
+            buttonVariant: 'outline',
+            menuItems: [
+              {
+                action: editor => {
+                  editor.tools.import.uploadAndReplaceMainImage();
+                },
+                label: 'Background Image',
+              },
+              {
+                action: editor => {
+                  editor.tools.import.uploadAndAddImage();
+                },
+                label: 'Overlay Image',
+              },
+              {
+                action: editor => {
+                  editor.tools.import.uploadAndOpenStateFile();
+                },
+                label: 'Editor Project File',
+              },
+            ],
+          },
+        ],
+      },
+    },
+  });
+  window.pixie = pixie;
+</script>
+</body>
+</html>

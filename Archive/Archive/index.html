@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+    <title>Pixie Dev</title>
+    <style>
+      .img-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .img-grid img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="reset-btn">Reset</button>
+    <div class="img-grid">
+      <button>
+        <img src="images/samples/sample1.jpg" alt="" />
+      </button>
+      <button>
+        <img src="images/samples/sample2.jpg" alt="" />
+      </button>
+      <button>
+        <img src="images/samples/sample3.jpg" alt="" />
+      </button>
+    </div>
+    <div
+      id="editor-container"
+      class="border border-divider"
+      style="width: 1056px; height: 700px; margin: auto"
+    ></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.querySelector("#reset-btn").addEventListener("click", () => {
+        pixie.resetEditor({
+          image: "images/samples/large_sample.jpg",
+          ui: {
+            defaultTool: "crop",
+          },
+        });
+      });
+
+      document.querySelectorAll(".img-grid button").forEach(btn => {
+        btn.addEventListener("click", e => {
+          pixie.open({
+            image: e.currentTarget.querySelector("img").src,
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

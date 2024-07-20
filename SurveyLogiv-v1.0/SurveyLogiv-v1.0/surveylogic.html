@@ -1,0 +1,81 @@
+
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="icons/tabicon.png"/>
+    <script src="js/surveylogic-help.js"></script>
+    <script src="js/surveylogic-elements.js"></script>
+    <script src="js/surveylogic-model.js"></script>
+    <script src="js/surveylogic-view.js"></script>
+    <script src="js/surveylogic-loupe.js"></script>
+    <script src="js/surveylogic-main.js"></script>
+    <script src="js/surveylogic-measurementlistener.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="tables\logs.js"></script>
+    <style>
+      body {
+        background: #777;
+        color: #fff;
+        font-size: 10pt;
+      }
+      form {
+        display: inline;
+      }
+      #helptext {
+        padding-left: 1em;
+        font-weight: bold;
+      }
+      canvas {
+        position: absolute;
+        top: 30em;
+        left: 10px;
+        background: transparent;
+      }
+      #background-img {
+        z-index: -1;
+      }
+      #measure {
+        z-index: 0;
+      }
+      #loupe {
+        position: fixed;  /* stays when rest scrolls. */
+        opacity: 0;
+        box-shadow: 3px 3px 15px;
+        border-radius: 10px;
+        color: #000;     /* influences shadow color. */
+      }
+      #download-result {
+        font-size: larger;
+        font-weight: bold;
+        color: #11f;
+        background: #999;
+        padding: 2px;
+      }
+      #download:hover {
+	color: #fff;
+      }
+    </style>
+  </head>
+
+  <h1>DataTable</h1>
+
+  <script src="tables\Image Resizer\ImageResizer.js"></script>
+  <button onclick="GatherDataForDrawingLines()">Export to SVG</button>
+
+  <body style="font-family: sans-serif;">
+
+    <iframe id="measurementdata.html-iframe" src="tables/jsontable.html" width="100%" height="300px" refresh="true"></iframe>
+    
+    <form>
+      <input id="file-chooser" type="file" accept="image/*">
+      <input id="show-angles" type="checkbox" checked="1">
+      <label for="show-angles">Show &#x2222; angles</label>
+      <input id="show-deltas" type="checkbox"><label for="show-deltas">Show dx/dy</label>
+    </form>
+    <a id="download-result" download="surveylogic-result.png">[Export transparent overlay]</a>
+    <span id="helptext"></span>
+    <canvas id="background-img" width="50" height="50"></canvas>
+    <canvas id="measure" width="50" height="50" style="cursor:url(icons/target-cursor.png) 31 31,crosshair;"></canvas>
+    <canvas id="loupe" width="280" height="280"></canvas>
+    <script>surveylogic_init();</script>
+  </body>
+</html>

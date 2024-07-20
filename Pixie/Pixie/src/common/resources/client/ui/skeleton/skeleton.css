@@ -1,0 +1,45 @@
+.skeleton-wave {
+  animation: skeleton-wave 2s ease-in-out infinite;
+  background-size: 200px 100%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.dark .skeleton-wave {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.skeleton-pulsate {
+  animation: skeleton-pulsate 1.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes skeleton-wave {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes skeleton-pulsate {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

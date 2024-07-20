@@ -1,0 +1,7 @@
+.player-bottom-gradient {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAAXNSR0IArs4c6QAAARRJREFUOE9lyNdHBQAAhfHb3nvvuu2997jNe29TJJEkkkgSSSSJJJJEEkkiifRH5jsP56Xz8PM5gcC/xfCIWBNHiXiTQIlEk0SJZJNCiVSTRol0k0GJTJNFiWyTQ4lck0eJfFNAiUJTRIliU0KJUlNGiXJTQYlKU0WJalNDiaCppUSdqadEg2mkRJNppkSLaaVEm2mnRIfppESX6aZEj+mlRJ/pp8SAGaTEkBmmxIgZpcSYGafEhAlRYtJMUWLazFBi1sxRImwilIiaeUosmEVKLJllagVWYQ3WYQM2YQu2YQd2YQ/24QAO4QiO4QRO4QzO4QIu4Qqu4QZu4Q7u4QEe4Qme4QVe4Q3e4QM+4Qu+4Qd+/wBSrSusEoTsFgAAAABJRU5ErkJggg==);
+}
+
+.player-bottom-text-shadow {
+  text-shadow: 0 0 2px rgba(0,0,0,.5);
+}

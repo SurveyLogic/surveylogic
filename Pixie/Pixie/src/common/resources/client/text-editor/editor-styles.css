@@ -1,0 +1,47 @@
+.ProseMirror {
+  @apply outline-none min-h-320;
+}
+
+.ProseMirror img.ProseMirror-selectednode,
+.ProseMirror iframe.ProseMirror-selectednode {
+  @apply ring-primary-light rounded;
+}
+
+.prose [data-indent='1'] {
+  @apply pl-20;
+}
+.prose [data-indent='2'] {
+  @apply pl-40;
+}
+.prose [data-indent='3'] {
+  @apply pl-60;
+}
+.prose [data-indent='4'] {
+  @apply pl-80;
+}
+.prose [data-indent='5'] {
+  @apply pl-100;
+}
+.prose [data-indent='6'] {
+  @apply pl-128;
+}
+
+.prose iframe {
+  @apply w-full aspect-video;
+}
+
+.info-block {
+  @apply text-base bg-positive/hover border-l border-l-4 border-l-positive/20 break-words rounded my-32 p-14 max-w-full border-l-4 border-l-positive;
+}
+
+.info-block .title {
+  @apply font-medium text-base text-[#43484d];
+}
+
+.info-block.important {
+  @apply bg-[#f3a432]/hover border-l-[#f3a432];
+}
+
+.info-block.warning {
+  @apply bg-danger/hover border-l-danger;
+}

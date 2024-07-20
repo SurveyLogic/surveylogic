@@ -1,0 +1,33 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-areas: "navbar navbar navbar"
+"sidenav-left header header"
+"sidenav-left content sidenav-right"
+"footer footer footer";
+    grid-template-rows:  auto auto 1fr;
+    grid-template-columns: auto 1fr auto;
+}
+
+.dashboard-grid-content {
+    grid-area: content;
+}
+
+.dashboard-grid-header {
+    grid-area: header;
+}
+
+.dashboard-grid-navbar {
+    grid-area: navbar;
+}
+
+.dashboard-grid-sidenav-left {
+    grid-area: sidenav-left;
+}
+
+.dashboard-grid-sidenav-right{
+    grid-area: sidenav-right;
+}
+
+.dashboard-grid-footer {
+  grid-area: footer;
+}

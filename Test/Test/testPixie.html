@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+    html, body, #editor-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+  <title>Pixie Example</title>
+  <script src="../Pixie/dist/pixie.umd.js"></script>
+</head>
+<body>
+<div id="editor-container"></div>
+<script>
+  Pixie.init({
+    selector: "#editor-container",
+    baseUrl: 'assets',
+    image: "../Pixie/assets/images/samples/car_sample.jpg",
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media only screen and (min-device-width: 768px) {
+    .tiny-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    }
+
+    .tiny-scrollbar::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+        background-color: transparent;
+    }
+
+    .tiny-scrollbar::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        @apply bg-fg-base/20;
+    }
+
+    .tiny-scrollbar::-webkit-scrollbar-track-piece:start {
+        background: transparent;
+    }
+
+    .tiny-scrollbar::-webkit-scrollbar-track-piece:end {
+        background: transparent;
+    }
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+    display: none;
+}
+
+.svg-icon {
+    @apply select-none inline-block fill-current flex-shrink-0 transition-icon;
+}
+
+.cropzone:not(.moving) .cropzone-transition {
+    @apply transition-all;
+}
+

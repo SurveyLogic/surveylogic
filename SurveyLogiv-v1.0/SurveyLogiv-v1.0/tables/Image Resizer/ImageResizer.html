@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="ImageResizer.css">
+</head>
+
+<script src="ImageResizer.js"></script>
+<script src="JSON TABLE/ImageResizer-JSON Table.js"></script>
+
+<div id="canvas-container" class="canvas-container">
+        <svg id="SVGforSVG-Photo" xmlns=http://www.w3.org/2000/svg xmlns:xlink="http://www.w3.org/1999/xlink">
+        </svg>
+        <img id="UserImage">
+</div> 
+
+<div id="settings-container" class="settings" style="width: 1500px; font-size: 20px;">
+    <label for="ppi">PPI:</label>
+    <select id="ppi">
+        <option value="72">72</option>
+        <option value="96">96</option>
+        <option value="150">150</option>
+        <option value="300">300</option>
+    </select>
+
+    <label for="scale">SCALE (ratio):</label>
+    <select id="scale">
+        <option value="1:1">1:1</option>
+        <option value="4:3">1:2</option>
+        <option value="16:9">1:10</option>
+    </select>
+
+    <button id="resizeButton" onclick="resizeButton()">Resize</button>
+</div>
+
+<div id="chart-container" class="chart-container"> <iframe id="measurementdata2.html-iframe" src="../jsontable.html" width="100%" height="300px" refresh="true"></iframe>
+
+    
+
+</div>
+
+<script>resizeIMGtoAnchorMeasurements ();</script>
+<script>svg_innit();</script>
